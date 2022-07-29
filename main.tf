@@ -5,5 +5,5 @@ locals {
 resource "datadog_monitor_json" "example" {
   for_each = local.monitors
 
-  monitor = templatefile(each.value)
+  monitor = templatefile(each.value, {})
 }
